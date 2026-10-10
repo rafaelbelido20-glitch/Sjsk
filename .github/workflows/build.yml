@@ -10,7 +10,7 @@ jobs:
         with: {distribution: temurin, java-version: 25}
       - run: python3 tools/gen_shaders.py
       - uses: gradle/actions/setup-gradle@v4
-        with: {gradle-version: "9.2.1"}
+        with: {gradle-version: "9.5.0"}
       - name: Build
         run: |
           gradle build --console=plain > build.log 2>&1 || { echo "=== ERRO ==="; grep -n -A15 "What went wrong" build.log; echo "=== FIM DO LOG ==="; tail -n 40 build.log; exit 1; }
